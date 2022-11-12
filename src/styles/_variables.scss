@@ -1,0 +1,35 @@
+:root {
+  // >color palette >
+  --clr-black: hsl(0, 0%, 0%);
+
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-white-400: hsl(0, 0%, 95%);
+
+  --clr-gray-700: hsl(0, 0%, 20%);
+  --clr-gray-600: hsl(0, 0%, 31%);
+  --clr-gray-500: hsl(0, 0%, 51%);
+  --clr-gray-400: hsl(0, 0%, 74%);
+  --clr-gray-300: hsl(0, 0%, 88%);
+
+  --clr-bluish-700: hsl(214, 84%, 56%);
+  --clr-bluish-300: hsl(202, 71%, 52%);
+
+  --clr-redish: hsl(0, 79%, 63%);
+
+  //  >typography  >
+  --ff: "Noto Sans", sans-serif;
+
+  --fs-700: 3.6rem;
+  --fs-600: 2.4rem;
+  --fs-500: 1.8rem;
+  --fs-400: 1.6rem;
+  --fs-300: 1.4rem;
+  --fs-200: 1.3rem;
+  --fs-100: 1.2rem;
+
+  --fw-700: 700;
+  --fw-600: 600;
+  --fw-500: 500;
+  --fw-400: 400;
+  --fw-300: 300;
+}
