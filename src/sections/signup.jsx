@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import RegisterTemplate from "../components/registerForm";
+import { User } from "../context/userAuthContext";
 
 const SignupSection = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { signup } = useContext(User);
 
   const buttonLabel = "Start coding now";
   const headSection = (
@@ -23,7 +25,11 @@ const SignupSection = () => {
     </p>
   );
 
-  const handleSubmit = () => {};
+  const handleSubmit = () => {
+    signup(email, password);
+    setEmail("");
+    setPassword("");
+  };
 
   const props = {
     headSection,
