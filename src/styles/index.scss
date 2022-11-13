@@ -1,5 +1,8 @@
 @forward "variables";
 @forward "normalize";
+@forward "input";
+@forward "button";
+@forward "registerTemplate";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&display=swap");
 
 *,
@@ -16,5 +19,4 @@ html {
 body {
   font-family: var(--ff);
   font-size: var(--fs-400);
-  min-height: 100vh;
 }

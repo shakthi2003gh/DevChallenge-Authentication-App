@@ -1,0 +1,60 @@
+.register-form {
+  margin: 1.7rem 1.9rem;
+
+  h1 {
+    font-size: var(--fs-500);
+    margin-block: 2.7rem 1.45rem;
+  }
+
+  h1,
+  .sub-heading {
+    color: var(--clr-gray-700);
+  }
+
+  p:not(.sub-heading) {
+    text-align: center;
+    margin-block: 2.2rem;
+    color: var(--clr-gray-500);
+  }
+
+  a {
+    color: var(--clr-bluish-300);
+    text-decoration: none;
+  }
+
+  .input-section {
+    display: grid;
+    gap: 1.45rem;
+    margin-block: 3.2rem;
+
+    input {
+      width: 100%;
+    }
+
+    button {
+      margin-top: 0.75rem;
+    }
+  }
+
+  .login-options {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-block: 3rem;
+  }
+
+  @media (min-width: 550px) {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    margin: 0;
+
+    .container {
+      width: 100vw;
+      max-width: 47.3rem;
+      padding: 4.9rem 5.9rem;
+      border-radius: 2.4rem;
+      border: 1px solid var(--clr-gray-400);
+    }
+  }
+}
