@@ -1,4 +1,4 @@
-const Input = ({ id, type, label, placeholder, icon, ...rest }) => {
+const Input = ({ id, type = "text", label, placeholder, icon, ...rest }) => {
   return (
     <div className="input-group">
       {label && <label htmlFor={id}>{label}</label>}
@@ -6,7 +6,7 @@ const Input = ({ id, type, label, placeholder, icon, ...rest }) => {
       <input
         id={id}
         type={type}
-        placeholder={placeholder || `Enter your ${type}...`}
+        placeholder={placeholder || `Enter your ${label}...`}
         {...rest}
       />
 
