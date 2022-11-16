@@ -1,0 +1,76 @@
+header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 2.4rem 1.9rem;
+
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: var(--clr-gray-700);
+    cursor: pointer;
+
+    .profile {
+      font-size: 3.2rem;
+    }
+
+    .profile-name,
+    .icon {
+      display: none;
+    }
+  }
+
+  .material-symbols-rounded {
+    font-variation-settings: "FILL" 1;
+  }
+
+  .popup-menu {
+    position: absolute;
+    top: 7.5rem;
+    right: 1.9rem;
+    width: 18.8rem;
+    padding: 1.5rem 1.2rem;
+    border-radius: 1.2rem;
+    border: 1px solid var(--clr-gray-300);
+    background-color: var(--clr-white);
+
+    div {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: var(--fs-100);
+      font-weight: var(--fw-500);
+      text-transform: capitalize;
+      padding: 1.2rem 1.3rem;
+      color: var(--clr-gray-600);
+
+      &.active {
+        border-radius: 0.8rem;
+        background-color: var(--clr-white-400);
+      }
+
+      &.logout {
+        border-top: 1px solid var(--clr-gray-300);
+        padding-bottom: 0;
+        color: var(--clr-redish);
+        cursor: pointer;
+      }
+    }
+  }
+
+  @media (min-width: 750px) {
+    width: 90%;
+    margin-inline: auto;
+
+    .profile {
+      font-weight: var(--fw-700);
+      text-transform: capitalize;
+
+      .profile-name,
+      .icon {
+        display: block;
+      }
+    }
+  }
+}
