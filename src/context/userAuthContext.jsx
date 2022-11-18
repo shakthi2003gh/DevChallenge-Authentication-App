@@ -16,7 +16,6 @@ const UserContext = ({ children }) => {
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      console.log(user);
       if (user)
         setUser({
           uid: user.uid,
@@ -83,7 +82,15 @@ const UserContext = ({ children }) => {
     signOut(auth).then(() => setUser());
   }
 
-  const value = { user, setUser, login, signup, updateUserDetail, logout };
+  const value = {
+    user,
+    setUser,
+    updateUserDetail,
+    signup,
+    login,
+    loginWithGoogle,
+    logout,
+  };
 
   return <User.Provider value={value}>{children}</User.Provider>;
 };
