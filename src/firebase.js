@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_APP_API_KEY,
@@ -15,3 +16,6 @@ export const app = initializeApp(firebaseConfig);
 
 // Initialize Firebase authentication
 export const auth = getAuth();
+
+// Initialize Cloud Storage and get a reference to the service
+export const storage = getStorage(app);

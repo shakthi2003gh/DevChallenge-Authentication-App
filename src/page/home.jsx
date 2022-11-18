@@ -32,7 +32,7 @@ const Home = () => {
           )}
 
           <div className="profile-name">
-            {user && user.name ? user.name : "user name"}
+            {user && user.displayName ? user.displayName : "user name"}
           </div>
 
           <span className="material-symbols-rounded icon">

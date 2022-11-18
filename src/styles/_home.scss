@@ -11,8 +11,10 @@ header {
     color: var(--clr-gray-700);
     cursor: pointer;
 
-    .profile {
-      font-size: 3.2rem;
+    img {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
     }
 
     .profile-name,

@@ -47,7 +47,7 @@ const Profile = () => {
               <span className="detail__name">name</span>
 
               <span className="result">
-                {user && user.name ? user.name : "No Name"}
+                {user && user.displayName ? user.displayName : "No Name"}
               </span>
             </div>
 

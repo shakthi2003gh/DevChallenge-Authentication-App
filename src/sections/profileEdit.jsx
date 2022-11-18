@@ -7,10 +7,10 @@ const EditProfile = () => {
   const navigate = useNavigate();
   const { user, updateUserDetail } = useContext(User);
   const [image, setImage] = useState((user && user.photoURL) || "");
+  const [imageBlob, setImageBlob] = useState();
   const [inputs, setInputs] = useState([
     { type: "text", label: "name", value: "" },
     { type: "text", label: "bio", value: "" },
-    { type: "text", label: "phone", value: "" },
     { type: "email", label: "email", value: "" },
     { type: "password", label: "password", value: "" },
   ]);
@@ -33,12 +33,20 @@ const EditProfile = () => {
     reader.readAsDataURL(file);
 
     reader.onloadend = () => {
+      setImageBlob(file);
       setImage(reader.result);
     };
   };
 
   const handleSubmit = async () => {
     const obj = {};
+
+    const imageObj =
+      imageBlob &&
+      imageBlob.name &&
+      !String(user.photoURL).includes(imageBlob.name)
+        ? { photoURL: imageBlob }
+        : {};
 
     inputs
       .filter((input) => input.value !== "")
@@ -47,8 +55,8 @@ const EditProfile = () => {
           case "name":
             obj.displayName = input.value;
             break;
-          case "photo":
-            obj.photoURL = input.value;
+          case "bio":
+            obj.bio = input.value;
             break;
           case "phone":
             obj.phoneNumber = input.value;
@@ -62,7 +70,7 @@ const EditProfile = () => {
         }
       });
 
-    await updateUserDetail(obj);
+    await updateUserDetail({ ...obj, ...imageObj });
     navigate("/profile");
   };
 
