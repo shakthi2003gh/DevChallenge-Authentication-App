@@ -6,7 +6,7 @@ import RegisterTemplate from "./../components/registerForm";
 const LoginSection = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { login } = useContext(User);
+  const { login, error } = useContext(User);
 
   const buttonLabel = "Login";
   const headSection = <h1>Login</h1>;
@@ -31,6 +31,7 @@ const LoginSection = () => {
     password,
     setPassword,
     handleSubmit,
+    error,
   };
 
   return <RegisterTemplate {...props} />;

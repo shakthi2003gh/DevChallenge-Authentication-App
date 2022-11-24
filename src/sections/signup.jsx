@@ -6,7 +6,7 @@ import { User } from "../context/userAuthContext";
 const SignupSection = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { signup } = useContext(User);
+  const { signup, error } = useContext(User);
 
   const buttonLabel = "Start coding now";
   const headSection = (
@@ -40,6 +40,7 @@ const SignupSection = () => {
     password,
     setPassword,
     handleSubmit,
+    error,
   };
 
   return <RegisterTemplate {...props} />;

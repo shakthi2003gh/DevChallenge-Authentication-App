@@ -13,6 +13,7 @@ export const User = createContext();
 
 const UserContext = ({ children }) => {
   const [user, setUser] = useState();
+  const [error, setError] = useState();
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -69,13 +70,23 @@ const UserContext = ({ children }) => {
   }
 
   async function signup(email, password) {
-    const data = await createUserWithEmailAndPassword(auth, email, password);
-    setUserDetail(data.user);
+    try {
+      const data = await createUserWithEmailAndPassword(auth, email, password);
+      setUserDetail(data.user);
+      setError("");
+    } catch {
+      setError("Invalid data");
+    }
   }
 
   async function login(email, password) {
-    const data = await signInWithEmailAndPassword(auth, email, password);
-    setUserDetail(data.user);
+    try {
+      const data = await signInWithEmailAndPassword(auth, email, password);
+      setUserDetail(data.user);
+      setError("");
+    } catch {
+      setError("Invalid data");
+    }
   }
 
   function logout() {
@@ -89,6 +100,7 @@ const UserContext = ({ children }) => {
     signup,
     login,
     logout,
+    error,
   };
 
   return <User.Provider value={value}>{children}</User.Provider>;

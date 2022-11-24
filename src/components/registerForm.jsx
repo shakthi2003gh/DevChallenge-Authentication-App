@@ -10,6 +10,7 @@ const RegisterTemplate = (props) => {
     password,
     setPassword,
     handleSubmit,
+    error,
   } = props;
 
   return (
@@ -18,6 +19,8 @@ const RegisterTemplate = (props) => {
         <img className="logo" src="./assets/devchallenges.svg" alt="" />
         {headSection}
         <div className="input-section">
+          {error && <div className="errors">{error}</div>}
+
           <Input
             id={1}
             type="text"

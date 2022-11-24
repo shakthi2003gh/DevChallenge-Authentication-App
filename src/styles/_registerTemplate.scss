@@ -27,6 +27,16 @@
     gap: 1.45rem;
     margin-block: 3.2rem;
 
+    .errors {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding: 0.5rem 1.3rem;
+      border: 1px solid;
+      border-radius: 0.8rem;
+      color: var(--clr-redish);
+      overflow: hidden;
+    }
+
     input {
       width: 100%;
     }
